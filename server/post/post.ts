@@ -1,12 +1,13 @@
 ///////////Post Handler
-import {Request} from "express";
+const logger = require('../logger/logger');
 import {checkUserAuthorizationData} from "../authorization";
 
 type AuthResult = string | {token:string} //string if error
 let authResult: AuthResult
 
-export  function postHandler(authData: any) {
-    console.log(authData)
+module.exports=  function postHandler(request: any ) {
+
+    let authData=request.body
 
     authResult=checkUserAuthorizationData( authData)
     return JSON.stringify(authResult)

@@ -12,7 +12,6 @@ let userAuthDBData: UserAuthDBData = {
 
 
 export function checkUserAuthorizationData(authData: any): AuthResult {
-    console.log('auth')
     let userDataFromQuery = authData
     let userPasswordFromQuery = userDataFromQuery.password
     let userEmailFromQuery = userDataFromQuery.email
