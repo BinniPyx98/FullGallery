@@ -1,5 +1,5 @@
 import {Response, Request, NextFunction} from "express";
-
+const multer=require('multer')
 const express = require('express');
 let bodyParser = require('body-parser');
 import {getHandler} from "./get/get";
@@ -19,7 +19,7 @@ path = '/Users/pm/Desktop/Astra/projects/module2/part3/Gallery/client/';
 app.use(bodyParser.json())
 app.use(fileUpload({}));
 app.use(express.static(path))
-
+app.use(multer({dest:'upload'}).single('filedata'));
 app.get('', (req: Request, res: Response) => {
     res.sendFile(path)
 })
