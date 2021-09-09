@@ -1,0 +1,29 @@
+{
+  "name": "mongoandserver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/express": "^4.17.13",
+    "body-parser": "^1.19.0",
+    "config": "^3.3.6",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.2.1",
+    "express-pino-logger": "^6.0.0",
+    "mongodb": "^4.1.1",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.3",
+    "pino": "^6.13.2",
+    "simple-node-logger": "^21.8.12",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "pino-pretty": "^6.0.0"
+  }
+}
