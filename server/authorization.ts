@@ -1,5 +1,6 @@
 //////Authorization
 type AuthResult = string | { token: string } //string if error
+const logger = require('./logger/logger');
 
 interface UserAuthDBData {
     [email: string]: string;
@@ -21,11 +22,11 @@ export function checkUserAuthorizationData(authData: any): AuthResult {
 
     let authorizationData = passwordDbStatus && emailDbStatus
     if (authorizationData == true) {
-        console.log('successful authorization')
+        logger.info('successful authorization')
         return {token: "token"}
 
     } else {
-        console.log('authorization error')
+        logger.info('authorization error')
         return "authorization error"
     }
 }

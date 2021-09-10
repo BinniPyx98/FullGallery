@@ -1,10 +1,9 @@
-const SimpleNodeLogger = require('simple-node-logger')
 const opts = {
-    errorEventName:'error',
     logFilePath:'./logger/info.log',
     timestampFormat:'YYYY-MM-DD HH:mm:ss.SSS'
 };
+const SimpleNodeLogger = require('simple-node-logger').createSimpleLogger('logger/info.log')
 
-const log = SimpleNodeLogger.createSimpleLogger(opts);
+//const log = SimpleNodeLogger.createSimpleLogger(opts);
 
-module.exports = log;
+module.exports = SimpleNodeLogger;
