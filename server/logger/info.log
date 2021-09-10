@@ -42,3 +42,8 @@
 11:02:20.337 INFO  "GET" undefined {"host":"localhost:5400","connection":"keep-alive","sec-ch-ua":"\"Chromium\";v=\"92\", \" Not A;Brand\";v=\"99\", \"Google Chrome\";v=\"92\"","origin":"http://localhost:5400","sec-ch-ua-mobile":"?0","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Safari/537.36","accept":"*/*","sec-fetch-site":"same-origin","sec-fetch-mode":"cors","sec-fetch-dest":"script","referer":"http://localhost:5400/","accept-encoding":"gzip, deflate, br","accept-language":"en-GB,en-US;q=0.9,en;q=0.8","cookie":"Webstorm-faa2090f=db7ea548-b112-4e91-b06e-7bc8628bb930","if-none-match":"W/\"f5d-17bcafe69f9\"","if-modified-since":"Thu, 09 Sep 2021 14:37:56 GMT"} 
 11:02:20.359 INFO  "GET" undefined {"host":"localhost:5400","connection":"keep-alive","sec-ch-ua":"\"Chromium\";v=\"92\", \" Not A;Brand\";v=\"99\", \"Google Chrome\";v=\"92\"","origin":"http://localhost:5400","sec-ch-ua-mobile":"?0","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Safari/537.36","accept":"*/*","sec-fetch-site":"same-origin","sec-fetch-mode":"cors","sec-fetch-dest":"script","referer":"http://localhost:5400/authorization/auth.js","accept-encoding":"gzip, deflate, br","accept-language":"en-GB,en-US;q=0.9,en;q=0.8","cookie":"Webstorm-faa2090f=db7ea548-b112-4e91-b06e-7bc8628bb930","if-none-match":"W/\"1114-17bcafe69e6\"","if-modified-since":"Thu, 09 Sep 2021 14:37:56 GMT"} 
 11:11:43.462 INFO  Server running 
+11:13:40.793 INFO  Server running 
+11:27:32.473 INFO  Server running 
+11:27:46.652 INFO  Server running 
+11:33:46.173 INFO  Server running 
+11:35:18.125 INFO  Server running 

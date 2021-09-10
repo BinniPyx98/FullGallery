@@ -6,7 +6,6 @@ let bodyParser = require('body-parser');
 import {getHandler} from "./get/get";
 import {postImageHandler} from "./post/postImageHandler";
 
-const pino = require('pino')
 let postHandler = require("./post/postAuthHandler");
 const logger = require('./logger/logger');
 let fileUpload = require('express-fileupload');
@@ -14,13 +13,10 @@ const app = express();
 
 
 app.use((request: Request, response: Response, next: NextFunction) => {
-    logger.info('Method-'+JSON.stringify(request.method)+' '+
-                 'Url-'+JSON.stringify(request.url)+' '+
-                'Body-'+JSON.stringify(request.body)+' '+
-                'Headers-'+JSON.stringify(request.headers));
 
+    requestLogging(request)
     if (request.method == 'POST' && request.query.page || request.method == 'GET' && request.query.page) {
-        checkToken(request,next,response)
+        checkToken(request, next, response)
     } else {
         next();
     }
@@ -74,11 +70,18 @@ app.listen(5400, () => {
     logger.info('Server running');
 })
 
-function checkToken(request: Request, next: NextFunction,response:Response): void {
+function checkToken(request: Request, next: NextFunction, response: Response): void {
     if (request.headers.authorization === 'token') {
         next();
     } else {
         logger.info('Not authorization');
         response.send('Not authorization');
     }
+}
+
+function requestLogging(request: Request): void {
+    logger.info('Method-' + JSON.stringify(request.method) + ' ' +
+        'Url-' + JSON.stringify(request.url) + ' ' +
+        'Body-' + JSON.stringify(request.body) + ' ' +
+        'Headers-' + JSON.stringify(request.headers));
 }
