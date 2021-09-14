@@ -65,7 +65,7 @@ components:
 #          schema:
 #            items:
 #              type: string
-#        - name: Basic
+#        - name: Authorization
 #          in: header
 #          schema:
 #            items:
