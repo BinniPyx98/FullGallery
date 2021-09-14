@@ -1,0 +1,71 @@
+openapi: 3.0.1
+info:
+  version: 1.0.0
+  title: Docs
+paths:
+  /:
+    get:
+      summary: Get index.html
+      responses:
+        '200':
+          description: successful operation
+        '404':
+          description: page not found
+  /auth:
+    post:
+      summary: return token
+      requestBody:
+        description: User auth data
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+      responses:
+        '200':
+          description: Auth success, return token
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Token'
+        '401':
+           description: Bad auth
+  /gallery:
+    get:
+      summary: return gallery
+      parameters:
+        - name: page
+          in: query
+          description: page number
+          schema:
+            items:
+              type: string
+        - name: Basic
+          in: header
+          schema:
+            items:
+              type: string
+      responses:
+        '200':
+          description: successful operation
+
+components:
+    schemas:
+      User:
+        type: object
+        properties:
+          email:
+            type: string
+            example: 'testemal@gmail.ru'
+          password:
+            type: string
+            example: 'KdSkFk3D45'
+      Token:
+        type: object
+        properties:
+          token:
+            type: string
+            example: 'token'
+
+
+
+

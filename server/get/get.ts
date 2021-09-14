@@ -11,22 +11,26 @@ type GetHandler=string|{
 }
 export function getHandler(request: Request): GetHandler {
 
+    try {
+        let pageNumber = Number(request.query.page)
 
-    let pageNumber = Number(request.query.page)
+        if (request.headers.authorization === 'token') {
+            // Read img path
+            let arr: Array<string> = fs.readdirSync(`img/page${pageNumber}`)
+                .map((elem: any) => path.join(`/img/page${pageNumber}/`, elem).toString());
 
-    if (request.headers.authorization === 'token') {
-        // Read img path
-        let arr: Array<string> = fs.readdirSync(`img/page${pageNumber}`)
-            .map((elem: any) => path.join(`/img/page${pageNumber}/`, elem).toString());
+            let galleryObj = {
+                total: 3,
+                page: Number(pageNumber),
+                objects: arr
+            }
 
-        let galleryObj = {
-            total: 3,
-            page: Number(pageNumber),
-            objects: arr
+            return JSON.stringify(galleryObj)
+        } else {
+            return "Not authorization"
         }
-
-        return JSON.stringify(galleryObj)
-    } else {
-        return "Not authorization"
+    }
+    catch (e){
+        return 'server havent this page'
     }
 }
