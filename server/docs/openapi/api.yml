@@ -1,3 +1,7 @@
+# Создать работающую документацию на /gallery  для post и get запросов невозможно,
+# так как для работы с данным роутом в header нужно передать Authorization: token
+# swagger запрещает использовать опрератор Authorization, для решения конфликта
+# нужно использовать другой способ передачи токена
 openapi: 3.0.1
 info:
   version: 1.0.0
@@ -29,24 +33,7 @@ paths:
                 $ref: '#/components/schemas/Token'
         '401':
            description: Bad auth
-  /gallery:
-    get:
-      summary: return gallery
-      parameters:
-        - name: page
-          in: query
-          description: page number
-          schema:
-            items:
-              type: string
-        - name: Basic
-          in: header
-          schema:
-            items:
-              type: string
-      responses:
-        '200':
-          description: successful operation
+
 
 components:
     schemas:
@@ -65,6 +52,27 @@ components:
           token:
             type: string
             example: 'token'
+            
+            
+
+#  /gallery:
+#    get:
+#      summary: return gallery
+#      parameters:
+#        - name: page
+#          in: query
+#          description: page number
+#          schema:
+#            items:
+#              type: string
+#        - name: Basic
+#          in: header
+#          schema:
+#            items:
+#              type: string
+#      responses:
+#        '200':
+#          description: successful operation
 
 
 
